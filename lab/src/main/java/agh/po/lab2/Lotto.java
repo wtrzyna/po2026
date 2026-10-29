@@ -2,32 +2,34 @@ package agh.po.lab2;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Lotto {
     public static void main(String[] args) {
+
         ArrayList<Integer> liczby = new ArrayList<>();
         ArrayList<Integer> liczby_strzel = new ArrayList<>();
-        Scanner scan = new Scanner(System.in);
 
         Random l = new Random();
         for (int i = 0; i < 6; i++) {
-            Integer x = scan.nextInt();
+            Integer x = Integer.parseInt(args[i]);
             liczby_strzel.add(x);
 
         }
 
-        for (int i = 0; i < 6; i++) {
-            liczby.add(l.nextInt(49)+1);
+        while (liczby.size() < 6) {
+            Integer x = l.nextInt(49)+1;
+            if (!liczby.contains(x)) {
+                liczby.add(x);
+            }
         }
 
         Integer licz = 0;
         for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
-                if (liczby.get(i) == liczby_strzel.get(j))
+                if (liczby.contains(liczby_strzel.get(i))) {
                     licz = licz + 1;
-            }
+                }
         }
+
         System.out.print("Liczby losowe: ");
         System.out.println(liczby);
         System.out.print("Twoje typy: ");
