@@ -97,4 +97,7 @@ Kategoria E: Propozycje własne studentów.
 Wiktor Kasprzak, [miejsce wolne]
 (Miejsce na własne tematy - dopiszcie temat i swoje imiona i nazwiska poniżej, zgodnie z zasadami zapisu z README.md)
 
+42) Symulator Lotniska Kraków - Balice
+Wojciech Młynarczyk, Wojciech Trzyna
+
 System Zarządzania Operacjami Płytowymi Lotniska: Miłosz Klasa, Paweł Kulik
