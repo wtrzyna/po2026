@@ -8,7 +8,7 @@ public class Samochod {
 
     private Silnik silnik;
     private SkrzyniaBiegow skrzyniaBiegow;
-    private Pozycja aktualnapozycja;
+    private Pozycja aktualnaPozycja;
 
     public Samochod(String nrRejestracyjny, String model, double predkoscMax, Silnik silnik, SkrzyniaBiegow skrzyniaBiegow, Pozycja aktualnaPozycja) {
         this.nrRejestracyjny = nrRejestracyjny;
@@ -16,23 +16,34 @@ public class Samochod {
         this. predkoscMax = predkoscMax;
         this.silnik = silnik;
         this.skrzyniaBiegow = skrzyniaBiegow;
-        this.aktualnapozycja = aktualnaPozycja;
-        stanWlaczenia = 0;
+        this.aktualnaPozycja = aktualnaPozycja;
+        stanWlaczenia = false;
     }
 
     public void wlacz () {
-        stanWlaczenia = 1;
+        stanWlaczenia = true;
         silnik.uruchom();
     }
 
     public void wylacz () {
-        stanWlaczenia = 0;
+        stanWlaczenia = false;
         silnik.zatrzymaj();
     }
 
-    public void getWaga () {
+    public double getWaga () {
         return silnik.getWaga() + skrzyniaBiegow.getWaga();
     }
+
+    /*public void jedzDo (Pozycja cel) {
+        double dt = 0.1;
+        while (aktualnaPozycja.getX() != cel.getX() || aktualnaPozycja.getY() != cel.getY()) {
+            double v = getAktPredkosc();
+            if (v <= 0) {
+                break;
+            }
+            aktualnaPozycja.przemiesc(dt, v, cel);
+        }
+    }*/
 
     public Pozycja getAktPozycja() {
         return aktualnaPozycja;

@@ -5,15 +5,15 @@ public class Sprzeglo extends Komponent{
 
     public Sprzeglo (String nazwa, double cena, double waga, String producent, String model, boolean stanSprzegla) {
         super(nazwa, cena, waga, producent, model);
-        stanSprzegla = 0;
+        stanSprzegla = false;
     }
 
     public void wcisnij() {
-        stanSprzegla = 1;
+        stanSprzegla = true;
     }
 
     public void zwolnij () {
-        stanSprzegla = 0;
+        stanSprzegla = false;
     }
 
     public boolean isStanSprzegla () {

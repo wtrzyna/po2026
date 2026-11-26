@@ -11,7 +11,7 @@ public class Silnik extends Komponent{
     }
 
     public void uruchom () {
-        if (obroty = 0) {
+        if (obroty == 0) {
             obroty = 800;
         }
     }
